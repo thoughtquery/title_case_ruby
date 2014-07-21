@@ -1,9 +1,14 @@
-word = "this is a word"
+word = "war OF THE worlds"
 def title_case(word)
-  x = word.split
+  x = word.downcase.split
   array=[]
   x.each do |stuff|
-  array.push(stuff.capitalize)
+    if (stuff == "the" || stuff == "and" || stuff == "of")
+      array.push(stuff.downcase)
+    else
+      array.push(stuff.capitalize)
+    end
   end
   array.join(" ")
 end
+puts title_case(word)
